@@ -1,4 +1,4 @@
-package com.ferico.recipemaster
+package com.ferico.recipemaster.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.ferico.recipemaster.MainActivity
+import com.ferico.recipemaster.R
 
 class OnboardingActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {

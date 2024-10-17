@@ -1,3 +1,5 @@
+package com.ferico.recipemaster.adapter
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -5,8 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ferico.recipemaster.R
-import com.ferico.recipemaster.Recipe
-import org.w3c.dom.Text
+import com.ferico.recipemaster.data.Recipe
 
 class RecipeAdapter(private val recipeList: List<Recipe>) : RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
 

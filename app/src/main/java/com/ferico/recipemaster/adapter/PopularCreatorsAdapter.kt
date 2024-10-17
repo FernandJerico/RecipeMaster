@@ -1,4 +1,4 @@
-package com.ferico.recipemaster
+package com.ferico.recipemaster.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.ferico.recipemaster.data.PopularCreators
+import com.ferico.recipemaster.R
 
 class PopularCreatorsAdapter(
     private val popularCreators: List<PopularCreators>

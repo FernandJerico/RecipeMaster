@@ -1,4 +1,4 @@
-package com.ferico.recipemaster
+package com.ferico.recipemaster.adapter
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.ferico.recipemaster.data.Category
+import com.ferico.recipemaster.R
 import com.google.android.material.card.MaterialCardView
 
 class CategoryAdapter(
