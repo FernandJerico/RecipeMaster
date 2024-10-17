@@ -19,4 +19,7 @@
     <string name="recent_recipe">Recent recipe</string>
     <string name="by_fernand_jerico">By Fernand Jerico</string>
     <string name="popular_creators">Popular Creators</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fab">FAB</string>
 </resources>

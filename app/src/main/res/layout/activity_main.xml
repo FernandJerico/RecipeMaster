@@ -11,32 +11,41 @@
     <FrameLayout
         android:id="@+id/navhost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultBavHost="true"/>
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/nav"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="92dp"
         android:layout_gravity="bottom"
         android:backgroundTint="@color/white"
-        app:fabCradleRoundedCornerRadius="10dp"
-        app:fabCradleVerticalOffset="10dp">
+        app:fabCradleRoundedCornerRadius="10dp">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            app:menu="@menu/nav_menu"
-            android:layout_gravity="bottom"
-            android:background="@drawable/transparent"/>
     </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:contentDescription="@string/fab"
         android:src="@drawable/ic_add"
-        app:layout_anchor="@id/nav"/>
+        app:layout_anchor="@+id/navhost"
+        app:layout_anchorGravity="bottom|center"
+        app:backgroundTint="@color/primaryColor"
+        app:tint="@color/white"
+        app:shapeAppearanceOverlay="@style/FAB_style"/>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/transparent"
+        app:menu="@menu/nav_menu"
+        app:labelVisibilityMode="unlabeled"
+        app:itemIconTint="@color/bottom_navbar_color"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

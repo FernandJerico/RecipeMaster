@@ -1,12 +1,9 @@
 package com.ferico.recipemaster.ui
 
-import com.ferico.recipemaster.adapter.RecipeAdapter
-import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import android.view.View
+import com.ferico.recipemaster.adapter.RecipeAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ferico.recipemaster.data.Category
@@ -20,27 +17,18 @@ import com.ferico.recipemaster.data.RecentRecipe
 import com.ferico.recipemaster.adapter.RecentRecipeAdapter
 import com.ferico.recipemaster.data.Recipe
 
-class HomeActivity : AppCompatActivity() {
+class Home : Fragment(R.layout.fragment_home) {
     private lateinit var recipeAdapter: RecipeAdapter
-
     private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var popularItemAdapter: PopularItemAdapter
     private lateinit var recentRecipeAdapter: RecentRecipeAdapter
     private lateinit var popularCreatorsAdapter: PopularCreatorsAdapter
 
-    @SuppressLint("MissingInflatedId")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_home)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.rv_item_recipe)
-        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rv_item_recipe)
+        val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         recyclerView.layoutManager = layoutManager
 
         val categories = listOf(
@@ -71,6 +59,7 @@ class HomeActivity : AppCompatActivity() {
             RecentRecipe("Home made cute pancake", "Fajar Gema", R.drawable.onboarding),
             RecentRecipe("How to make seafood fried rice", "Hafidz Sr", R.drawable.onboarding)
         )
+
         val popularCreatorsList = listOf(
             PopularCreators("Fernand Jerico", R.drawable.onboarding),
             PopularCreators("Fajar Gema", R.drawable.onboarding),
@@ -81,8 +70,8 @@ class HomeActivity : AppCompatActivity() {
         recipeAdapter = RecipeAdapter(recipeList)
         recyclerView.adapter = recipeAdapter
 
-        val rvCategory = findViewById<RecyclerView>(R.id.rv_category)
-        rvCategory.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val rvCategory = view.findViewById<RecyclerView>(R.id.rv_category)
+        rvCategory.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         categoryAdapter = CategoryAdapter(categories) { selectedCategory ->
             categories.forEach { it.isSelected = false }
             selectedCategory.isSelected = true
@@ -90,18 +79,18 @@ class HomeActivity : AppCompatActivity() {
         }
         rvCategory.adapter = categoryAdapter
 
-        val rvItemPopularCategory = findViewById<RecyclerView>(R.id.rv_item_popular_category)
-        rvItemPopularCategory.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val rvItemPopularCategory = view.findViewById<RecyclerView>(R.id.rv_item_popular_category)
+        rvItemPopularCategory.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         popularItemAdapter = PopularItemAdapter(popularItems)
         rvItemPopularCategory.adapter = popularItemAdapter
 
-        val rvRecentRecipe = findViewById<RecyclerView>(R.id.rv_recent_recipe)
-        rvRecentRecipe.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val rvRecentRecipe = view.findViewById<RecyclerView>(R.id.rv_recent_recipe)
+        rvRecentRecipe.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         recentRecipeAdapter = RecentRecipeAdapter(recentRecipeList)
         rvRecentRecipe.adapter = recentRecipeAdapter
 
-        val rvPopularCreators = findViewById<RecyclerView>(R.id.rv_popular_creators)
-        rvPopularCreators.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val rvPopularCreators = view.findViewById<RecyclerView>(R.id.rv_popular_creators)
+        rvPopularCreators.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         popularCreatorsAdapter = PopularCreatorsAdapter(popularCreatorsList)
         rvPopularCreators.adapter = popularCreatorsAdapter
     }
