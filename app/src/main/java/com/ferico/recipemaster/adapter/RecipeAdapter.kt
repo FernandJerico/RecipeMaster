@@ -28,7 +28,7 @@ class RecipeAdapter(private val recipeList: List<Recipe>) : RecyclerView.Adapter
         holder.textRecipe.text = recipe.title
         holder.ratingRecipe.text = recipe.rating
         holder.username.text = recipe.username
-        holder.imageRecipe.setImageResource(recipe.imageResId) // Pastikan Anda memiliki drawable dengan ID yang sesuai
+        holder.imageRecipe.setImageResource(recipe.imageResId)
     }
 
     override fun getItemCount() = recipeList.size

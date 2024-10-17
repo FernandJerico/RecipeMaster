@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.ferico.recipemaster.R
+import com.ferico.recipemaster.adapter.SavedVideoAdapter
+import com.ferico.recipemaster.data.Recipe
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +25,7 @@ class SavedVideo : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var savedVideoAdapter: SavedVideoAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +41,26 @@ class SavedVideo : Fragment() {
     ): View? {
         // Inflate layout for this fragment
         return inflater.inflate(R.layout.fragment_saved_video, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Initialising RecyclerView
+        val rvSavedVideo = view.findViewById<RecyclerView>(R.id.rv_saved_video)
+        val rvSavedVideoLayoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        rvSavedVideo.layoutManager = rvSavedVideoLayoutManager
+
+        val recipeList = listOf(
+            Recipe("Sushi", "4.5", "Fernand", R.drawable.onboarding),
+            Recipe("Pasta", "4.7", "Jericho", R.drawable.onboarding),
+            Recipe("Salad", "4.9", "Federico", R.drawable.onboarding),
+            Recipe("Breakfast", "4.6", "Struck", R.drawable.onboarding),
+        )
+
+        // Initialising Adapter dengan daftar recipe
+        savedVideoAdapter = SavedVideoAdapter(recipeList)
+        rvSavedVideo.adapter = savedVideoAdapter
     }
 
     companion object {
