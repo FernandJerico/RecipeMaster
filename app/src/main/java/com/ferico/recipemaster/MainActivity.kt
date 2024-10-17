@@ -42,9 +42,9 @@ class MainActivity : AppCompatActivity() {
         )
 
         val popularItems = listOf(
-            PopularItem("Pepper sweetcorn ramen", "10 Mins", R.drawable.onboarding),
-            PopularItem("Spaghetti Bolognese", "20 Mins", R.drawable.onboarding),
-            PopularItem("Chicken Tacos", "15 Mins", R.drawable.onboarding)
+            PopularItem("Pepper sweetcorn ramen", "10 Min's", R.drawable.onboarding),
+            PopularItem("Spaghetti Bolognese", "20 Min's", R.drawable.onboarding),
+            PopularItem("Chicken Tacos", "15 Min's", R.drawable.onboarding)
         )
 
         val recipeList = listOf(
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
             PopularCreators("Fernand Jerico", R.drawable.onboarding),
             PopularCreators("Fajar Gema", R.drawable.onboarding),
             PopularCreators("Hafidz Surya", R.drawable.onboarding),
-            PopularCreators("Ojan Sulap", R.drawable.onboarding)
+            PopularCreators("Ozan Sulap", R.drawable.onboarding)
         )
 
         recipeAdapter = RecipeAdapter(recipeList)
