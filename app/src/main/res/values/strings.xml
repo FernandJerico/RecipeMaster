@@ -22,4 +22,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fab">FAB</string>
+    <string name="saved_recipes">Saved recipes</string>
+    <string name="video">Video</string>
+    <string name="recipe">Recipe</string>
 </resources>
