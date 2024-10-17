@@ -40,7 +40,9 @@
                     android:text="@string/video"
                     android:layout_marginStart="0dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background_selector"
+                    android:textColor="@drawable/button_text_selector"/>
 
                 <Button
                     android:id="@+id/btn_saved_recipe"
@@ -49,7 +51,9 @@
                     android:text="@string/recipe"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="0dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background_selector"
+                    android:textColor="@drawable/button_text_selector"/>
 
             </LinearLayout>
 
@@ -57,6 +61,7 @@
                 android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:paddingTop="24dp"
                 android:layout_marginTop="16dp"/>
 
         </LinearLayout>
