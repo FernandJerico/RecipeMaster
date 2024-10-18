@@ -1,5 +1,6 @@
 package com.ferico.recipemaster.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -59,7 +60,14 @@ class SavedVideo : Fragment() {
         )
 
         // Initialising Adapter dengan daftar recipe
-        savedVideoAdapter = SavedVideoAdapter(recipeList)
+        savedVideoAdapter = SavedVideoAdapter(recipeList){recipe ->
+            val intent = Intent(requireContext(), RecipeDetailActivity::class.java).apply {
+                putExtra("RECIPE_TITLE", recipe.title)
+                putExtra("RECIPE_IMAGE", recipe.imageResId)
+                putExtra("RECIPE_RATING", recipe.rating)
+            }
+            startActivity(intent)
+        }
         rvSavedVideo.adapter = savedVideoAdapter
     }
 

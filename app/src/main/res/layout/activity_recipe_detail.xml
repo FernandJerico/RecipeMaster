@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.RecipeDetail"
+    tools:context=".ui.RecipeDetailActivity"
     android:background="@color/white"
     android:fitsSystemWindows="true">
 
@@ -52,6 +52,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tv_recipe_detail_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_recipe"
@@ -66,6 +67,7 @@
             app:cardCornerRadius="10dp">
 
             <ImageView
+                android:id="@+id/iv_recipe_detail_img"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -87,6 +89,7 @@
                 android:contentDescription="@string/icon_star"/>
 
             <TextView
+                android:id="@+id/tv_recipe_detail_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -189,6 +192,7 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_ingredients_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
