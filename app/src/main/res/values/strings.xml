@@ -28,4 +28,16 @@
     <string name="time">Time</string>
     <string name="pepper_sweetcorn_ramen">Pepper sweetcorn ramen</string>
     <string name="_10_mins">10 Mins</string>
+    <string name="back">Back</string>
+    <string name="title_recipe">Title Recipe</string>
+    <string name="recipe_image">Recipe Image</string>
+    <string name="_300_reviews">(300 Reviews)</string>
+    <string name="icon_star">Icon Star</string>
+    <string name="author">Author</string>
+    <string name="icon_location">Icon Location</string>
+    <string name="location_author">Location Author</string>
+    <string name="follow">Follow</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="_5_items">5 Items</string>
+    <string name="ingredients_weight">Ingredients Weight</string>
 </resources>
