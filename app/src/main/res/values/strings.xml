@@ -25,4 +25,7 @@
     <string name="saved_recipes">Saved recipes</string>
     <string name="video">Video</string>
     <string name="recipe">Recipe</string>
+    <string name="time">Time</string>
+    <string name="pepper_sweetcorn_ramen">Pepper sweetcorn ramen</string>
+    <string name="_10_mins">10 Mins</string>
 </resources>

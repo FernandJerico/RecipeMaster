@@ -5,28 +5,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.ferico.recipemaster.R
+import com.ferico.recipemaster.adapter.SavedRecipeAdapter
+import com.ferico.recipemaster.data.PopularItem
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SavedRecipe.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SavedRecipe : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: SavedRecipeAdapter
+    private lateinit var recipeList: List<PopularItem>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
         }
     }
 
@@ -34,27 +28,29 @@ class SavedRecipe : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate layout for this fragment
-        return inflater.inflate(R.layout.fragment_saved_recipe, container, false)
+        val view = inflater.inflate(R.layout.fragment_saved_recipe, container, false)
+
+        recyclerView = view.findViewById(R.id.rv_saved_recipe)
+
+        val recipeList = listOf(
+            PopularItem("Pepper sweetcorn ramen", "10 Mins", R.drawable.onboarding),
+            PopularItem("Avocado toast", "15 Mins", R.drawable.onboarding),
+            PopularItem("Pasta with Pesto", "20 Mins", R.drawable.onboarding),
+            PopularItem("Sate Ayam Madura", "30 Mins", R.drawable.onboarding),
+            PopularItem("Sate Ayam Madura", "30 Mins", R.drawable.onboarding),
+            PopularItem("Sate Ayam Madura", "30 Mins", R.drawable.onboarding),
+        )
+
+        // Set adapter
+        adapter = SavedRecipeAdapter(recipeList)
+        recyclerView.adapter = adapter
+
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+
+        return view
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SavedRecipe.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SavedRecipe().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
     }
 }
