@@ -4,15 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ferico.recipemaster.R
-import com.ferico.recipemaster.data.PopularItem
+import com.ferico.recipemaster.data.Recipe
 import de.hdodenhof.circleimageview.CircleImageView
 
-class SavedRecipeAdapter(private val recipeList: List<PopularItem>) : RecyclerView.Adapter<SavedRecipeAdapter.RecipeViewHolder>() {
+class SavedRecipeAdapter(private val recipeList: List<Recipe>) : RecyclerView.Adapter<SavedRecipeAdapter.RecipeViewHolder>() {
 
     // ViewHolder class untuk memegang view setiap item
     class RecipeViewHolder(v: View) : RecyclerView.ViewHolder(v) {
@@ -34,7 +33,7 @@ class SavedRecipeAdapter(private val recipeList: List<PopularItem>) : RecyclerVi
 
         // Set data ke view
         holder.imageRecipe.setImageResource(recipe.imageResId)
-        holder.nameRecipe.text = recipe.name
+        holder.nameRecipe.text = recipe.title
         holder.timeRecipe.text = recipe.time
 
         // Click listener untuk icon bookmark
