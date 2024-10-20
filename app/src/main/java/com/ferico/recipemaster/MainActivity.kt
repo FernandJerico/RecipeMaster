@@ -8,7 +8,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.ferico.recipemaster.ui.Home
-import com.ferico.recipemaster.ui.HomeActivity
 import com.ferico.recipemaster.ui.Notification
 import com.ferico.recipemaster.ui.Profile
 import com.ferico.recipemaster.ui.Saved

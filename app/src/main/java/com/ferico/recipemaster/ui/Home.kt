@@ -1,5 +1,6 @@
 package com.ferico.recipemaster.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -43,10 +44,49 @@ class Home : Fragment(R.layout.fragment_home) {
         )
 
         val popularItems = listOf(
-            PopularItem("Pepper sweetcorn ramen", "10 Min's", R.drawable.onboarding),
-            PopularItem("Spaghetti Bolognese", "20 Min's", R.drawable.onboarding),
-            PopularItem("Chicken Tacos", "15 Min's", R.drawable.onboarding)
+            PopularItem(
+                "Pepper sweetcorn ramen",
+                "10 Min's",
+                "4.5",
+                R.drawable.onboarding,
+                listOf(
+                    RecipeIngredient("Ramen Noodles", "Noodle", "200g"),
+                    RecipeIngredient("Sweetcorn", "Vegetable", "100g"),
+                    RecipeIngredient("Red Pepper", "Vegetable", "1 piece"),
+                    RecipeIngredient("Soy Sauce", "Condiment", "2 tbsp"),
+                    RecipeIngredient("Green Onions", "Vegetable", "2 stalks")
+                )
+            ),
+            PopularItem(
+                "Spaghetti Bolognese",
+                "20 Min's",
+                "4.7",
+                R.drawable.onboarding,
+                listOf(
+                    RecipeIngredient("Spaghetti", "Pasta", "250g"),
+                    RecipeIngredient("Ground Beef", "Meat", "200g"),
+                    RecipeIngredient("Tomato Sauce", "Sauce", "150ml"),
+                    RecipeIngredient("Onion", "Vegetable", "1 piece"),
+                    RecipeIngredient("Garlic", "Condiment", "2 cloves"),
+                    RecipeIngredient("Olive Oil", "Oil", "2 tbsp")
+                )
+            ),
+            PopularItem(
+                "Chicken Tacos",
+                "15 Min's",
+                "4.9",
+                R.drawable.onboarding,
+                listOf(
+                    RecipeIngredient("Chicken Breast", "Meat", "150g"),
+                    RecipeIngredient("Taco Shells", "Shell", "3 pieces"),
+                    RecipeIngredient("Lettuce", "Vegetable", "1 head"),
+                    RecipeIngredient("Tomato", "Vegetable", "1 piece"),
+                    RecipeIngredient("Cheddar Cheese", "Cheese", "50g"),
+                    RecipeIngredient("Sour Cream", "Condiment", "2 tbsp")
+                )
+            )
         )
+
 
         val recipeList = listOf(
             Recipe(
@@ -117,7 +157,18 @@ class Home : Fragment(R.layout.fragment_home) {
             PopularCreators("Ozan Sulap", R.drawable.onboarding)
         )
 
-        recipeAdapter = RecipeAdapter(recipeList)
+
+        // Initialising Adapter dengan daftar recipe
+        recipeAdapter = RecipeAdapter(recipeList){recipe ->
+            val intent = Intent(requireContext(), RecipeDetailActivity::class.java).apply {
+                putExtra("RECIPE_TITLE", recipe.title)
+                putExtra("RECIPE_IMAGE", recipe.imageResId)
+                putExtra("RECIPE_RATING", recipe.rating)
+                putExtra("RECIPE_TIME_COOKING", recipe.time)
+                putParcelableArrayListExtra("RECIPE_INGREDIENTS", ArrayList(recipe.ingredients))
+            }
+            startActivity(intent)
+        }
         recyclerView.adapter = recipeAdapter
 
         val rvCategory = view.findViewById<RecyclerView>(R.id.rv_category)
@@ -131,7 +182,17 @@ class Home : Fragment(R.layout.fragment_home) {
 
         val rvItemPopularCategory = view.findViewById<RecyclerView>(R.id.rv_item_popular_category)
         rvItemPopularCategory.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        popularItemAdapter = PopularItemAdapter(popularItems)
+
+        popularItemAdapter = PopularItemAdapter(popularItems){recipe ->
+            val intent = Intent(requireContext(), RecipeDetailActivity::class.java).apply {
+                putExtra("RECIPE_TITLE", recipe.name)
+                putExtra("RECIPE_IMAGE", recipe.imageResId)
+                putExtra("RECIPE_RATING", recipe.rating)
+                putExtra("RECIPE_TIME_COOKING", recipe.time)
+                putParcelableArrayListExtra("RECIPE_INGREDIENTS", ArrayList(recipe.ingredients))
+            }
+            startActivity(intent)
+        }
         rvItemPopularCategory.adapter = popularItemAdapter
 
         val rvRecentRecipe = view.findViewById<RecyclerView>(R.id.rv_recent_recipe)

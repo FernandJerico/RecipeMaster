@@ -10,7 +10,8 @@ import com.ferico.recipemaster.data.PopularItem
 import com.ferico.recipemaster.R
 
 class PopularItemAdapter(
-    private val popularItems: List<PopularItem>
+    private val popularItems: List<PopularItem>,
+    private val onItemClick: (PopularItem) -> Unit
 ) : RecyclerView.Adapter<PopularItemAdapter.PopularItemViewHolder>() {
 
     inner class PopularItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -27,12 +28,18 @@ class PopularItemAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopularItemViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_popular_category, parent, false) // layout item populer
+            .inflate(R.layout.item_popular_category, parent, false)
         return PopularItemViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: PopularItemViewHolder, position: Int) {
+        val recipe = popularItems[position]
         holder.bind(popularItems[position])
+
+        // Set click listener untuk item
+        holder.itemView.setOnClickListener {
+            onItemClick(recipe)
+        }
     }
 
     override fun getItemCount(): Int = popularItems.size

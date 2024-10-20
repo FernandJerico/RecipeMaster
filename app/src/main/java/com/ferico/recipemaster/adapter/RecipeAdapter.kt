@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ferico.recipemaster.R
 import com.ferico.recipemaster.data.Recipe
 
-class RecipeAdapter(private val recipeList: List<Recipe>) : RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
+class RecipeAdapter(private val recipeList: List<Recipe>, private val onItemClick: (Recipe) -> Unit) : RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
 
     class RecipeViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         val imageRecipe: ImageView = v.findViewById(R.id.iv_img_content)
@@ -29,6 +29,11 @@ class RecipeAdapter(private val recipeList: List<Recipe>) : RecyclerView.Adapter
         holder.ratingRecipe.text = recipe.rating
         holder.username.text = recipe.username
         holder.imageRecipe.setImageResource(recipe.imageResId)
+
+        // Set click listener untuk item
+        holder.itemView.setOnClickListener {
+            onItemClick(recipe)
+        }
     }
 
     override fun getItemCount() = recipeList.size
