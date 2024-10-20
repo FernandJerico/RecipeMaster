@@ -1,23 +1,20 @@
 package com.ferico.recipemaster.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ferico.recipemaster.R
 import com.ferico.recipemaster.adapter.SavedRecipeAdapter
-import com.ferico.recipemaster.data.PopularItem
 import com.ferico.recipemaster.data.Recipe
 import com.ferico.recipemaster.data.RecipeIngredient
 
 class SavedRecipe : Fragment() {
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: SavedRecipeAdapter
-    private lateinit var recipeList: List<PopularItem>
+    private lateinit var savedRecipeAdapter: SavedRecipeAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,9 +27,16 @@ class SavedRecipe : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_saved_recipe, container, false)
+        return inflater.inflate(R.layout.fragment_saved_recipe, container, false)
+    }
 
-        recyclerView = view.findViewById(R.id.rv_saved_recipe)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Initialising RecyclerView
+        val rvSavedRecipe = view.findViewById<RecyclerView>(R.id.rv_saved_recipe)
+        val rvSavedRecipeLayoutManager = GridLayoutManager(requireContext(), 2)
+        rvSavedRecipe.layoutManager = rvSavedRecipeLayoutManager
 
         val recipeList = listOf(
             Recipe(
@@ -90,13 +94,18 @@ class SavedRecipe : Fragment() {
             )
         )
 
-        // Set adapter
-        adapter = SavedRecipeAdapter(recipeList)
-        recyclerView.adapter = adapter
-
-        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
-
-        return view
+        // Initialising Adapter dengan daftar recipe
+        savedRecipeAdapter = SavedRecipeAdapter(recipeList){recipe ->
+            val intent = Intent(requireContext(), RecipeDetailActivity::class.java).apply {
+                putExtra("RECIPE_TITLE", recipe.title)
+                putExtra("RECIPE_IMAGE", recipe.imageResId)
+                putExtra("RECIPE_RATING", recipe.rating)
+                putExtra("RECIPE_TIME_COOKING", recipe.time)
+                putParcelableArrayListExtra("RECIPE_INGREDIENTS", ArrayList(recipe.ingredients))
+            }
+            startActivity(intent)
+        }
+        rvSavedRecipe.adapter = savedRecipeAdapter
     }
 
     companion object {

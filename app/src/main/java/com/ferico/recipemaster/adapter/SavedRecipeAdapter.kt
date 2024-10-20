@@ -11,7 +11,7 @@ import com.ferico.recipemaster.R
 import com.ferico.recipemaster.data.Recipe
 import de.hdodenhof.circleimageview.CircleImageView
 
-class SavedRecipeAdapter(private val recipeList: List<Recipe>) : RecyclerView.Adapter<SavedRecipeAdapter.RecipeViewHolder>() {
+class SavedRecipeAdapter(private val recipeList: List<Recipe>, private val onItemClick: (Recipe) -> Unit) : RecyclerView.Adapter<SavedRecipeAdapter.RecipeViewHolder>() {
 
     // ViewHolder class untuk memegang view setiap item
     class RecipeViewHolder(v: View) : RecyclerView.ViewHolder(v) {
@@ -36,9 +36,9 @@ class SavedRecipeAdapter(private val recipeList: List<Recipe>) : RecyclerView.Ad
         holder.nameRecipe.text = recipe.title
         holder.timeRecipe.text = recipe.time
 
-        // Click listener untuk icon bookmark
-        holder.savedIcon.setOnClickListener {
-
+        // Set click listener untuk item
+        holder.itemView.setOnClickListener {
+            onItemClick(recipe)
         }
     }
 
