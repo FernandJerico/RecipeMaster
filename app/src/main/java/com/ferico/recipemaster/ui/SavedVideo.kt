@@ -59,6 +59,7 @@ class SavedVideo : Fragment() {
                 "4.5",
                 "Fernand",
                 R.drawable.onboarding,
+                "10 Minute",
                 listOf(
                     RecipeIngredient("Rice", "Grain", "200g"),
                     RecipeIngredient("Nori", "Seaweed", "5 sheets"),
@@ -71,6 +72,7 @@ class SavedVideo : Fragment() {
                 "4.7",
                 "Jericho",
                 R.drawable.onboarding,
+                "20 Minute",
                 listOf(
                     RecipeIngredient("Pasta", "Grain", "300g"),
                     RecipeIngredient("Tomato Sauce", "Sauce", "200ml"),
@@ -83,6 +85,7 @@ class SavedVideo : Fragment() {
                 "4.9",
                 "Federico",
                 R.drawable.onboarding,
+                "20 Minute",
                 listOf(
                     RecipeIngredient("Lettuce", "Vegetable", "1 head"),
                     RecipeIngredient("Cucumber", "Vegetable", "1 piece"),
@@ -96,6 +99,7 @@ class SavedVideo : Fragment() {
                 "4.6",
                 "Struck",
                 R.drawable.onboarding,
+                "20 Minute",
                 listOf(
                     RecipeIngredient("Eggs", "Protein", "2 pcs"),
                     RecipeIngredient("Bread", "Grain", "2 slices"),
@@ -112,6 +116,7 @@ class SavedVideo : Fragment() {
                 putExtra("RECIPE_TITLE", recipe.title)
                 putExtra("RECIPE_IMAGE", recipe.imageResId)
                 putExtra("RECIPE_RATING", recipe.rating)
+                putExtra("RECIPE_TIME_COOKING", recipe.time)
                 putParcelableArrayListExtra("RECIPE_INGREDIENTS", ArrayList(recipe.ingredients))
             }
             startActivity(intent)

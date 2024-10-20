@@ -66,6 +66,7 @@ class HomeActivity : AppCompatActivity() {
                 "4.5",
                 "Fernand",
                 R.drawable.onboarding,
+                "20 Minute",
                 listOf(
                     RecipeIngredient("Rice", "Grain", "200g"),
                     RecipeIngredient("Nori", "Seaweed", "5 sheets"),
@@ -78,6 +79,7 @@ class HomeActivity : AppCompatActivity() {
                 "4.7",
                 "Jericho",
                 R.drawable.onboarding,
+                "20 Minute",
                 listOf(
                     RecipeIngredient("Pasta", "Grain", "300g"),
                     RecipeIngredient("Tomato Sauce", "Sauce", "200ml"),
@@ -90,6 +92,7 @@ class HomeActivity : AppCompatActivity() {
                 "4.9",
                 "Federico",
                 R.drawable.onboarding,
+                "20 Minute",
                 listOf(
                     RecipeIngredient("Lettuce", "Vegetable", "1 head"),
                     RecipeIngredient("Cucumber", "Vegetable", "1 piece"),
@@ -103,6 +106,7 @@ class HomeActivity : AppCompatActivity() {
                 "4.6",
                 "Struck",
                 R.drawable.onboarding,
+                "20 Minute",
                 listOf(
                     RecipeIngredient("Eggs", "Protein", "2 pcs"),
                     RecipeIngredient("Bread", "Grain", "2 slices"),

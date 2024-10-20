@@ -27,6 +27,7 @@ class RecipeDetailActivity : AppCompatActivity() {
         val recipeTitle = intent.getStringExtra("RECIPE_TITLE")
         val recipeImageResId = intent.getIntExtra("RECIPE_IMAGE", 0)
         val recipeRating = intent.getStringExtra("RECIPE_RATING")
+        val recipeTimeCooking = intent.getStringExtra("RECIPE_TIME_COOKING")
         val ingredients = intent.getParcelableArrayListExtra<RecipeIngredient>("RECIPE_INGREDIENTS")
 
         val ingredientsAdapter = RecipeIngredientAdapter(ingredients ?: listOf())
@@ -40,5 +41,6 @@ class RecipeDetailActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tv_recipe_detail_title).text = recipeTitle
         findViewById<ImageView>(R.id.iv_recipe_detail_img).setImageResource(recipeImageResId)
         findViewById<TextView>(R.id.tv_recipe_detail_rating).text = recipeRating.toString()
+        findViewById<TextView>(R.id.tv_recipe_detail_time).text = recipeTimeCooking
     }
 }

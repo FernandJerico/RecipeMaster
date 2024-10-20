@@ -40,4 +40,5 @@
     <string name="ingredients">Ingredients</string>
     <string name="_5_items">5 Items</string>
     <string name="ingredients_weight">Ingredients Weight</string>
+    <string name="time_cooking">Time Cooking</string>
 </resources>
