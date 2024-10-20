@@ -16,6 +16,7 @@ import com.ferico.recipemaster.R
 import com.ferico.recipemaster.data.RecentRecipe
 import com.ferico.recipemaster.adapter.RecentRecipeAdapter
 import com.ferico.recipemaster.data.Recipe
+import com.ferico.recipemaster.data.RecipeIngredient
 
 class Home : Fragment(R.layout.fragment_home) {
     private lateinit var recipeAdapter: RecipeAdapter
@@ -48,10 +49,55 @@ class Home : Fragment(R.layout.fragment_home) {
         )
 
         val recipeList = listOf(
-            Recipe("Sushi", "4.5", "Fernand", R.drawable.onboarding),
-            Recipe("Pasta", "4.7", "Jericho", R.drawable.onboarding),
-            Recipe("Salad", "4.9", "Federico", R.drawable.onboarding),
-            Recipe("Breakfast", "4.6", "Struck", R.drawable.onboarding),
+            Recipe(
+                "Sushi",
+                "4.5",
+                "Fernand",
+                R.drawable.onboarding,
+                listOf(
+                    RecipeIngredient("Rice", "Grain", "200g"),
+                    RecipeIngredient("Nori", "Seaweed", "5 sheets"),
+                    RecipeIngredient("Salmon", "Fish", "150g"),
+                    RecipeIngredient("Soy Sauce", "Condiment", "50ml")
+                )
+            ),
+            Recipe(
+                "Pasta",
+                "4.7",
+                "Jericho",
+                R.drawable.onboarding,
+                listOf(
+                    RecipeIngredient("Pasta", "Grain", "300g"),
+                    RecipeIngredient("Tomato Sauce", "Sauce", "200ml"),
+                    RecipeIngredient("Parmesan", "Cheese", "50g"),
+                    RecipeIngredient("Olive Oil", "Oil", "2 tbsp")
+                )
+            ),
+            Recipe(
+                "Salad",
+                "4.9",
+                "Federico",
+                R.drawable.onboarding,
+                listOf(
+                    RecipeIngredient("Lettuce", "Vegetable", "1 head"),
+                    RecipeIngredient("Cucumber", "Vegetable", "1 piece"),
+                    RecipeIngredient("Carrot", "Vegetable", "1 piece"),
+                    RecipeIngredient("Olive Oil", "Oil", "2 tbsp"),
+                    RecipeIngredient("Vinegar", "Condiment", "1 tbsp")
+                )
+            ),
+            Recipe(
+                "Breakfast",
+                "4.6",
+                "Struck",
+                R.drawable.onboarding,
+                listOf(
+                    RecipeIngredient("Eggs", "Protein", "2 pcs"),
+                    RecipeIngredient("Bread", "Grain", "2 slices"),
+                    RecipeIngredient("Butter", "Dairy", "1 tbsp"),
+                    RecipeIngredient("Bacon", "Meat", "3 strips")
+                )
+            )
         )
 
         val recentRecipeList = listOf(
