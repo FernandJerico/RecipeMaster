@@ -77,8 +77,8 @@
 
             <ImageButton
                 android:id="@+id/iv_edit_photo"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_gravity="top|end"
                 android:layout_margin="8dp"
                 android:background="@drawable/bg_box_saved"
@@ -95,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:hint="Enter Your Recipe Title"
+            android:hint="@string/enter_your_recipe_title"
             app:boxCornerRadiusTopStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"

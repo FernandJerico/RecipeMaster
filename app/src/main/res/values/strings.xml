@@ -42,4 +42,5 @@
     <string name="ingredients_weight">Ingredients Weight</string>
     <string name="time_cooking">Time Cooking</string>
     <string name="icon_edit_photo">Icon Edit Photo</string>
+    <string name="enter_your_recipe_title">Enter Your Recipe Title</string>
 </resources>
