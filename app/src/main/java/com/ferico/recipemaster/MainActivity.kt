@@ -7,14 +7,17 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.ferico.recipemaster.ui.CreateRecipeActivity
 import com.ferico.recipemaster.ui.Home
 import com.ferico.recipemaster.ui.Notification
 import com.ferico.recipemaster.ui.Profile
 import com.ferico.recipemaster.ui.Saved
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
     private  lateinit var navView: BottomNavigationView
+    private lateinit var fab: FloatingActionButton
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,12 +25,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navView = findViewById(R.id.nav_view)
+        fab = findViewById(R.id.floatingActionButton)
 
         // Set default fragment (HomeFragment)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.navhost, Home())
                 .commit()
+        }
+
+        // Listener untuk FAB (Floating Action Button)
+        fab.setOnClickListener {
+            val moveIntent = Intent(this, CreateRecipeActivity::class.java)
+            startActivity(moveIntent)
         }
 
         navView.setOnItemSelectedListener { item ->
