@@ -17,12 +17,9 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Heading4.Bold"
                 android:layout_marginHorizontal="24dp"
                 android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold"
                 android:text="@string/saved_recipes" />
 
             <LinearLayout

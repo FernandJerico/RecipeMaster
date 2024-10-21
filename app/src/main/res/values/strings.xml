@@ -55,4 +55,5 @@
     <string name="add_new_ingredient">Add new ingredient</string>
     <string name="add_new_ingredients">Add new ingredients</string>
     <string name="save_my_recipes">Save my recipes</string>
+    <string name="background_onboarding">Background Onboarding</string>
 </resources>

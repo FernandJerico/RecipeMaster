@@ -13,11 +13,8 @@
 
     <TextView
         android:id="@+id/tv_creator_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/Small.Bold"
         android:layout_marginTop="8dp"
-        android:textSize="12sp"
-        android:textStyle="bold"
         android:textColor="@color/neutral90Color"
         android:textAlignment="center"
         android:text="@string/popular_creators" />

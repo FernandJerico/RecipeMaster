@@ -25,11 +25,8 @@
 
         <TextView
             android:id="@+id/tv_ingredients_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Paragraph.Bold"
             android:layout_marginStart="16dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
             android:layout_gravity="center"
             android:textColor="@color/neutral90Color"
             android:text="@string/ingredients" />
@@ -41,11 +38,8 @@
 
         <TextView
             android:id="@+id/tv_ingredients_weight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Label.Regular"
             android:layout_marginStart="16dp"
-            android:textSize="14sp"
-            android:textStyle="normal"
             android:layout_gravity="center"
             android:textColor="@color/neutral40Color"
             android:text="@string/ingredients_weight" />

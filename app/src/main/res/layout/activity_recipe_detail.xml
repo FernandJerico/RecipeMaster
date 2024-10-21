@@ -58,21 +58,15 @@
             android:orientation="vertical">
 
             <TextView
+                style="@style/Heading4.Bold"
                 android:id="@+id/tv_recipe_detail_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="@string/title_recipe"
-                android:textSize="24sp"
-                android:textStyle="bold"
                 android:textColor="@color/neutral90Color"/>
 
             <TextView
+                style="@style/Label.Bold"
                 android:id="@+id/tv_recipe_detail_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="@string/time_cooking"
-                android:textSize="14sp"
-                android:textStyle="bold"
                 android:textColor="@color/neutral30Color"/>
 
             <androidx.cardview.widget.CardView
@@ -104,22 +98,16 @@
                     android:contentDescription="@string/icon_star"/>
 
                 <TextView
+                    style="@style/Label.Bold"
                     android:id="@+id/tv_recipe_detail_rating"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
                     android:textColor="@color/neutral90Color"
                     android:text="@string/_4_5" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/Label.Regular"
                     android:layout_marginStart="8dp"
                     android:layout_gravity="center"
-                    android:textSize="14sp"
-                    android:textStyle="normal"
                     android:textColor="@color/neutral40Color"
                     android:text="@string/_300_reviews" />
             </LinearLayout>
@@ -143,19 +131,13 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/Paragraph.Bold"
                         android:layout_gravity="start"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
                         android:textColor="@color/primaryTextColor"
                         android:text="@string/author" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp"
-                        android:textStyle="normal"
+                        style="@style/Label.Regular"
                         android:textColor="@color/neutral40Color"
                         android:text="@string/location_author"
                         app:drawableStartCompat="@drawable/ic_location_on"
@@ -168,12 +150,9 @@
                     android:layout_weight="1" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/Label.Bold"
                     android:background="@drawable/button_background"
-                    android:text="@string/follow"
-                    android:textSize="14sp"
-                    android:textStyle="bold"/>
+                    android:text="@string/follow"/>
             </LinearLayout>
 
             <LinearLayout
@@ -183,10 +162,7 @@
                 android:layout_marginTop="24dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    style="@style/Heading5.Bold"
                     android:textColor="@color/primaryTextColor"
                     android:text="@string/ingredients" />
 
@@ -196,10 +172,7 @@
                     android:layout_weight="1" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textStyle="normal"
+                    style="@style/Label.Regular"
                     android:textColor="@color/neutral40Color"
                     android:text="@string/_5_items" />
 

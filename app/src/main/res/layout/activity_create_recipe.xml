@@ -61,11 +61,8 @@
 
                 <TextView
                     android:id="@+id/tv_recipe_detail_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="@string/title_recipe"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
+                    style="@style/Heading4.Bold"
                     android:textColor="@color/neutral90Color"/>
 
                 <androidx.cardview.widget.CardView
@@ -141,13 +138,10 @@
 
                         <TextView
                             android:id="@+id/tv_serves"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:layout_gravity="center"
+                            style="@style/Paragraph.Bold"
                             android:textColor="@color/neutral90Color"
+                            android:layout_marginStart="16dp"
+                            android:layout_gravity="center"
                             android:text="@string/serves" />
 
                         <View
@@ -157,11 +151,8 @@
 
                         <TextView
                             android:id="@+id/tv_serves_size"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/Label.Bold"
                             android:layout_marginStart="16dp"
-                            android:textSize="14sp"
-                            android:textStyle="normal"
                             android:layout_gravity="center"
                             android:textColor="@color/neutral40Color"
                             android:text="@string/amount" />
@@ -204,11 +195,8 @@
 
                         <TextView
                             android:id="@+id/tv_cooking_time"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/Paragraph.Bold"
                             android:layout_marginStart="16dp"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
                             android:layout_gravity="center"
                             android:textColor="@color/neutral90Color"
                             android:text="@string/cook_time" />
@@ -220,11 +208,8 @@
 
                         <TextView
                             android:id="@+id/tv_time_cooking"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            style="@style/Label.Bold"
                             android:layout_marginStart="16dp"
-                            android:textSize="14sp"
-                            android:textStyle="normal"
                             android:layout_gravity="center"
                             android:textColor="@color/neutral40Color"
                             android:text="@string/time_cooking" />
@@ -243,12 +228,9 @@
                 </androidx.cardview.widget.CardView>
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/ingredients"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
+                    style="@style/Heading5.Bold"
                     android:textColor="@color/neutral90Color"/>
 
                 <LinearLayout
@@ -274,13 +256,10 @@
                         android:contentDescription="@string/add_new_ingredients"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:layout_marginStart="4dp"
                         android:layout_gravity="center"
                         android:text="@string/add_new_ingredient"
-                        android:textStyle="bold"
-                        android:textSize="16sp"/>
+                        style="@style/Paragraph.Bold"/>
                 </LinearLayout>
 
             </LinearLayout>

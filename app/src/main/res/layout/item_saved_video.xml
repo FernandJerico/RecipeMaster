@@ -38,10 +38,9 @@
                 android:layout_margin="8dp"
                 android:background="@drawable/bg_box_rating"
                 android:text="@string/_4_5"
-                android:textSize="14sp"
+                style="@style/Label.Bold"
                 android:gravity="center"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
                 app:drawableStartCompat="@drawable/ic_star"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
@@ -76,14 +75,11 @@
 
             <TextView
                 android:id="@+id/tv_title_saved_video"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Paragraph.Bold"
                 android:layout_weight="1"
                 android:maxLines="2"
                 android:text="@string/title_content"
-                android:textColor="@color/primaryTextColor"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="@color/primaryTextColor" />
 
             <ImageView
                 android:id="@+id/iv_more_saved_video"
@@ -113,11 +109,9 @@
 
             <TextView
                 android:id="@+id/tv_username_saved_video"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Small.Regular"
                 android:layout_marginStart="8dp"
                 android:layout_gravity="center_vertical"
-                android:textSize="12sp"
                 android:textColor="@color/secondaryTextColor"
                 android:text="@string/by_user"/>
 

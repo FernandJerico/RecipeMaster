@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/onboarding"/>
+        android:src="@drawable/onboarding"
+        android:contentDescription="@string/background_onboarding"/>
 
     <View
         android:layout_width="match_parent"
@@ -29,25 +30,20 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_star" />
+            android:src="@drawable/ic_star"
+            android:contentDescription="@string/icon_star"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Paragraph.Bold"
             android:text="@string/_60k"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
             android:layout_marginStart="4dp"
-            android:layout_marginEnd="2dp"
-            android:textStyle="bold"/>
+            android:layout_marginEnd="2dp"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Paragraph.Regular"
             android:text="@string/premium_recipes"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="normal" />
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <LinearLayout
@@ -57,35 +53,25 @@
         android:layout_gravity="bottom|center_horizontal" >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:textSize="56sp"
-            android:textStyle="bold"
+            style="@style/Heading.Bold.White"
             android:text="@string/lets_cooking"
             android:textAlignment="center"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Paragraph.Regular"
             android:textColor="@android:color/white"
             android:layout_marginTop="24dp"
-            android:text="@string/find_best_recipes_for_cooking"
-            android:textSize="16sp"
-            android:textStyle="normal" />
+            android:text="@string/find_best_recipes_for_cooking" />
 
         <Button
             android:id="@+id/btn_start_cooking"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="48dp"
             android:paddingHorizontal="32dp"
             android:paddingVertical="12dp"
             android:text="@string/start_cooking"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            style="@style/Paragraph.Bold"
             android:drawableEnd="@drawable/arrow_forward"
             android:background="@drawable/button_background"/>
     </LinearLayout>

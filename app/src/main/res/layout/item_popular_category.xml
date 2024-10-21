@@ -28,22 +28,18 @@
 
         <TextView
             android:id="@+id/tv_popular_item_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            style="@style/Label.Bold"
             android:textAlignment="center"
+            android:layout_gravity="center"
             android:textColor="@color/neutral90Color"
-            android:text="Pepper sweetcorn ramen"/>
+            android:text="@string/title_recipe"/>
         
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Small.Regular"
             android:layout_marginTop="18dp"
-            android:textSize="12sp"
-            android:textStyle="normal"
             android:textColor="@color/neutral30Color"
-            android:text="Time" />
+            android:text="@string/time" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,13 +48,11 @@
 
             <TextView
                 android:id="@+id/tv_popular_item_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textStyle="bold"
+                android:layout_width="0dp"
+                style="@style/Small.Bold"
                 android:layout_weight="1"
                 android:textColor="@color/neutral90Color"
-                android:text="10 Mins" />
+                android:text="@string/time_cook" />
 
             <ImageView
                 android:id="@+id/iv_saved"

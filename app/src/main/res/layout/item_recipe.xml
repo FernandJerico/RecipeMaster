@@ -76,14 +76,12 @@
 
             <TextView
                 android:id="@+id/tv_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                style="@style/Paragraph.Bold"
                 android:layout_weight="1"
                 android:maxLines="2"
                 android:text="@string/title_content"
-                android:textColor="@color/primaryTextColor"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="@color/primaryTextColor" />
 
             <ImageView
                 android:id="@+id/iv_more"
@@ -105,7 +103,6 @@
             app:layout_constraintTop_toBottomOf="@+id/ly_title">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profile_image"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
@@ -113,11 +110,9 @@
 
             <TextView
                 android:id="@+id/tv_username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Small"
                 android:layout_marginStart="8dp"
                 android:layout_gravity="center_vertical"
-                android:textSize="12sp"
                 android:textColor="@color/secondaryTextColor"
                 android:text="@string/by_user"/>
 

@@ -16,15 +16,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/onboarding"/>
+            android:src="@drawable/onboarding"
+            android:contentDescription="@string/recipe_image"/>
     </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tv_recent_recipe_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="14sp"
+        style="@style/Label.Bold"
         android:textColor="@color/neutral90Color"
         android:paddingHorizontal="4dp"
         android:paddingVertical="8dp"
@@ -32,10 +30,7 @@
 
     <TextView
         android:id="@+id/tv_recent_recipe_author"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="normal"
-        android:textSize="10sp"
+        style="@style/Tiny.Regular"
         android:textColor="@color/neutral40Color"
         android:paddingHorizontal="4dp"
         android:text="@string/by_fernand_jerico" />
