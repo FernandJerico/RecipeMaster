@@ -70,4 +70,11 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="profile_name">Fernand Jerico</string>
     <string name="profile_body">Hello world I’m Fernand Jerico, I’m from Italy 🇮🇹 I love cooking so much!</string>
+    <string name="_3">3</string>
+    <string name="videos">Videos</string>
+    <string name="_13">13</string>
+    <string name="followers">Followers</string>
+    <string name="_14k">14K</string>
+    <string name="following">Following</string>
+    <string name="_120">120</string>
 </resources>
