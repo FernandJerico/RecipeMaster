@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import com.ferico.recipemaster.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,8 +35,49 @@ class Notification : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notification, container, false)
+        val view = inflater.inflate(R.layout.fragment_notification, container, false)
+
+        val btnNotificationAll = view.findViewById<Button>(R.id.btn_notification_all)
+        val btnNotificationRead = view.findViewById<Button>(R.id.btn_notification_read)
+        val btnNotificationUnread = view.findViewById<Button>(R.id.btn_notification_unread)
+
+        // Set initial selection for buttons
+        btnNotificationAll.isSelected = true
+        btnNotificationRead.isSelected = false
+        btnNotificationUnread.isSelected = false
+
+        // Show VideoFragment initially
+        loadFragment(NotificationAll())
+
+        // Set click listeners for the buttons
+        btnNotificationAll.setOnClickListener {
+            btnNotificationAll.isSelected = true
+            btnNotificationRead.isSelected = false
+            btnNotificationUnread.isSelected = false
+            loadFragment(NotificationAll())
+        }
+
+        btnNotificationRead.setOnClickListener {
+            btnNotificationAll.isSelected = false
+            btnNotificationRead.isSelected = true
+            btnNotificationUnread.isSelected = false
+            loadFragment(NotificationRead())
+        }
+
+        btnNotificationUnread.setOnClickListener {
+            btnNotificationAll.isSelected = false
+            btnNotificationRead.isSelected = false
+            btnNotificationUnread.isSelected = true
+            loadFragment(NotificationUnread())
+        }
+
+        return view
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        val transaction = childFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container_notification, fragment)
+        transaction.commit()
     }
 
     companion object {

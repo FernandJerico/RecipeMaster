@@ -61,4 +61,9 @@
     <string name="all">All</string>
     <string name="read">Read</string>
     <string name="unread">Unread</string>
+    <string name="icon_paper">Icon Paper</string>
+    <string name="notification_title">Notification Title</string>
+    <string name="notification_body">Notification Body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar in nulla vestibulum bibendum. Nullam dolor lorem, vehicula a eros tristique, semper imperdiet ligula.</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
 </resources>

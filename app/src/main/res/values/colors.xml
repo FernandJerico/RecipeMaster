@@ -18,4 +18,6 @@
     <color name="neutral40Color">#A9A9A9</color>
     <color name="transparent">#00000000</color>
     <color name="ratingColor">#FFB660</color>
+    <color name="greenColor">#31B057</color>
+    <color name="green10Color">#CEECD7</color>
 </resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="82dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/neutral10Color"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:weightSum="3">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:padding="6dp"
+            android:src="@drawable/ic_paper"
+            android:background="@drawable/ingredients_background"
+            android:backgroundTint="@color/green10Color"
+            android:contentDescription="@string/icon_paper" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical"
+            android:layout_weight="2.5">
+
+            <TextView
+                android:id="@+id/tv_notification_title"
+                style="@style/Small.Bold"
+                android:text="@string/notification_title"
+                android:textColor="@color/neutral90Color"/>
+            
+            <TextView
+                android:id="@+id/tv_notification_body"
+                style="@style/Small.Regular"
+                android:text="@string/notification_body"
+                android:textColor="@color/neutral40Color"/>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_notification"
+            android:layout_width="16dp"
+            android:layout_height="8dp"
+            app:cardCornerRadius="8dp"
+            android:backgroundTint="@color/primaryColor"
+            android:layout_weight="0.5"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
