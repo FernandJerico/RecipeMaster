@@ -66,4 +66,8 @@
     <string name="notification_body">Notification Body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar in nulla vestibulum bibendum. Nullam dolor lorem, vehicula a eros tristique, semper imperdiet ligula.</string>
     <string name="today">Today</string>
     <string name="yesterday">Yesterday</string>
+    <string name="my_profile">My profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="profile_name">Fernand Jerico</string>
+    <string name="profile_body">Hello world I’m Fernand Jerico, I’m from Italy 🇮🇹 I love cooking so much!</string>
 </resources>
