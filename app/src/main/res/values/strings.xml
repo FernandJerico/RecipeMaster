@@ -56,4 +56,9 @@
     <string name="add_new_ingredients">Add new ingredients</string>
     <string name="save_my_recipes">Save my recipes</string>
     <string name="background_onboarding">Background Onboarding</string>
+    <string name="notifications">Notifications</string>
+    <string name="icon_filter">Icon Filter</string>
+    <string name="all">All</string>
+    <string name="read">Read</string>
+    <string name="unread">Unread</string>
 </resources>
