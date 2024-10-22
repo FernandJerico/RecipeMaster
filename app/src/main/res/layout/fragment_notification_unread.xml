@@ -18,4 +18,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"/>
 
+    <TextView
+        style="@style/Tiny.Regular"
+        android:layout_gravity="center"
+        android:text="You’re all set!"
+        android:textColor="@color/neutral40Color"/>
+
 </LinearLayout>
