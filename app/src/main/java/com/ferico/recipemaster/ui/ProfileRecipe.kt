@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ferico.recipemaster.R
+import com.ferico.recipemaster.adapter.ProfileMyRecipeAdapter
 import com.ferico.recipemaster.adapter.ProfileMyVideoAdapter
 import com.ferico.recipemaster.data.Recipe
 import com.ferico.recipemaster.data.RecipeIngredient
@@ -27,7 +28,7 @@ class ProfileRecipe : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private lateinit var profileMyVideoAdapter: ProfileMyVideoAdapter
+    private lateinit var profileMyRecipeAdapter: ProfileMyRecipeAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +50,7 @@ class ProfileRecipe : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Initialising RecyclerView
-        val rvSavedVideo = view.findViewById<RecyclerView>(R.id.rv_my_video)
+        val rvSavedVideo = view.findViewById<RecyclerView>(R.id.rv_my_recipe)
         val rvSavedVideoLayoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         rvSavedVideo.layoutManager = rvSavedVideoLayoutManager
 
@@ -111,7 +112,7 @@ class ProfileRecipe : Fragment() {
 
 
         // Initialising Adapter dengan daftar recipe
-        profileMyVideoAdapter = ProfileMyVideoAdapter(recipeList){recipe ->
+        profileMyRecipeAdapter = ProfileMyRecipeAdapter(recipeList){recipe ->
             val intent = Intent(requireContext(), RecipeDetailActivity::class.java).apply {
                 putExtra("RECIPE_TITLE", recipe.title)
                 putExtra("RECIPE_IMAGE", recipe.imageResId)
@@ -121,7 +122,7 @@ class ProfileRecipe : Fragment() {
             }
             startActivity(intent)
         }
-        rvSavedVideo.adapter = profileMyVideoAdapter
+        rvSavedVideo.adapter = profileMyRecipeAdapter
     }
 
     companion object {
