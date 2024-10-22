@@ -79,4 +79,6 @@
     <string name="_120">120</string>
     <string name="_12_ingredients_40_minute">12 Ingredients | 40 Minute</string>
     <string name="recipes">Recipes</string>
+    <string name="logo">Logo</string>
+    <string name="recipe_master">Recipe Master</string>
 </resources>
