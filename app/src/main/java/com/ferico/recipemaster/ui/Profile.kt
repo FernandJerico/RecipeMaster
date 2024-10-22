@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import com.ferico.recipemaster.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,8 +35,38 @@ class Profile : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        val btnMyVideo = view.findViewById<Button>(R.id.btn_my_video)
+        val btnMyRecipe = view.findViewById<Button>(R.id.btn_my_recipe)
+
+        // Set initial selection for buttons
+        btnMyVideo.isSelected = true
+        btnMyRecipe.isSelected = false
+
+        // Show VideoFragment initially
+        loadFragment(ProfileVideo())
+
+        // Set click listeners for the buttons
+        btnMyVideo.setOnClickListener {
+            btnMyVideo.isSelected = true
+            btnMyRecipe.isSelected = false
+            loadFragment(ProfileVideo())
+        }
+
+        btnMyRecipe.setOnClickListener {
+            btnMyVideo.isSelected = false
+            btnMyRecipe.isSelected = true
+            loadFragment(ProfileRecipe())
+        }
+
+        return view
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        val transaction = childFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container_profile, fragment)
+        transaction.commit()
     }
 
     companion object {

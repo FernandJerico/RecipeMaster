@@ -81,7 +81,8 @@
             android:orientation="horizontal"
             android:layout_marginTop="20dp"
             android:layout_marginHorizontal="20dp"
-            android:weightSum="4">
+            android:weightSum="4"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -92,7 +93,7 @@
     
                 <TextView
                     style="@style/Small.Regular"
-                    android:text="@string/recipe"
+                    android:text="@string/recipes"
                     android:textColor="@color/neutral40Color"/>
 
                 <TextView
@@ -170,7 +171,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:paddingHorizontal="20dp">
+            android:paddingHorizontal="20dp"
+            android:layout_marginTop="12dp">
 
             <Button
                 android:id="@+id/btn_my_video"
@@ -195,5 +197,12 @@
                 android:textColor="@drawable/button_text_selector"/>
 
         </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fragment_container_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="24dp"
+            android:layout_marginTop="16dp"/>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
